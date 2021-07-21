@@ -20,6 +20,26 @@ if (mix.inProduction()) {<br>
     mix.version();<br>
 }<br>
 `<br>
-10. 
+10. resources/js/Components/App.jsx<br>
+`
+import React from "react"<br>
+import { render } from 'react-dom';<br><br>
+const el = document.getElementById('app');<br><br>
+const App = () => {<br>
+    return (<div>React Test</div>);<br>
+}<br><br>
+export default App<br><br>
+if (el) {<br>
+    render(<App />, el);<br>
+}<br>
+`<br>
+11. resources/js/app.js<br>
+`
+import './bootstrap'<br>
+import { InertiaProgress } from '@inertiajs/progress';<br>
+import './Components/App';<br><br>
+InertiaProgress.init();<br>
+`<br>
+12. 
 
 # Install template
