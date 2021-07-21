@@ -5,9 +5,9 @@ import { InertiaApp } from '@inertiajs/inertia-react';
 const el = document.getElementById('app');
 
 const App = () => {
-    return (<InertiaApp
-        initialPage={JSON.parse(el.dataset.page)}
-        resolveComponent={name => require(`./Pages/${name}`).default}
+    return (<InertiaApp 
+        initialPage={JSON.parse(el.dataset.page)} 
+        resolveComponent={name => require(`./Pages/${name}`).default} 
     />);
 }
 

@@ -48,6 +48,40 @@ InertiaProgress.init();<br>
 13. `php artisan inertia:middleware`<br>
 14. Create folder `resources/js/Components/Pages`<br>
 15. `npm run watch`<br>
-16. 
+16. resources/js/Components/Pages/Welcom.jsx<br>
+`
+import React from 'react';<br>
+import { Link } from '@inertiajs/inertia-react';<br><br>
+const Welcome = ({canLogin, user, laravelVersion, phpVersion}) => {<br>
+    return (<div<br>
+        className="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0"><br>
+        {canLogin &&<br>
+        <div className="hidden fixed top-0 right-0 px-6 py-4 sm:block"><br>
+            {user && <Link href={route('dashboard')}<br>
+                           className="text-sm text-gray-700 underline"><br>
+                Dashboard<br>
+            </Link>}<br><br>
+            {!user && (<><br>
+                <Link href={route('login')}<br>
+                      className="text-sm text-gray-700 underline"><br>
+                    Log in<br>
+                </Link><br>
+                <Link href={route('register')}<br>
+                      className="ml-4 text-sm text-gray-700 underline"><br>
+                    Register<br>
+                </Link><br>
+            </>)}<br>
+        </div>}<br><br>
+        <div className="max-w-6xl mx-auto sm:px-6 lg:px-8"><br>
+            <div<br>
+                className="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0"><br>
+                Laravel v{laravelVersion} (PHP v{phpVersion})<br>
+            </div><br>
+        </div><br>
+    </div>);<br>
+};<br><br>
+export default Welcome;
+`
+17. 
 
 # Install template
