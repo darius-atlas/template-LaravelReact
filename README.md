@@ -24,9 +24,13 @@ if (mix.inProduction()) {<br>
 `
 import React from "react"<br>
 import { render } from 'react-dom';<br><br>
+import { InertiaApp } from '@inertiajs/inertia-react';<br>
 const el = document.getElementById('app');<br><br>
 const App = () => {<br>
-    return (<div>React Test</div>);<br>
+    return (<InertiaApp<br>
+        initialPage={JSON.parse(el.dataset.page)}<br>
+        resolveComponent={name => require(`./Pages/${name}`).default}<br>
+    />);<br>
 }<br><br>
 export default App<br><br>
 if (el) {<br>
@@ -40,6 +44,10 @@ import { InertiaProgress } from '@inertiajs/progress';<br>
 import './Components/App';<br><br>
 InertiaProgress.init();<br>
 `<br>
-12. 
+12. `composer require inertiajs/inertia-laravel`<br>
+13. `php artisan inertia:middleware`<br>
+14. Create folder `resources/js/Components/Pages`<br>
+15. `npm run watch`<br>
+16. 
 
 # Install template
